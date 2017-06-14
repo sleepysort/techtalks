@@ -55,6 +55,6 @@ module.exports.callWithDouble = callWithDouble;
  * @returns The new function that is the compose of f and g.
  */
 function compose(f, g) {
-
+    /** Add code here */
 }
 module.exports.compose = compose;
