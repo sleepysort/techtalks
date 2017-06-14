@@ -50,6 +50,8 @@ module.exports.callWithDouble = callWithDouble;
  * Write a function that composes two functions together, and returns the composed function.
  * On function composition: http://www.purplemath.com/modules/fcncomp3.htm
  * 
+ * You can assume that the function f will have at most one argument.
+ * 
  * @param f  The first function to compose.
  * @param g  The second function to compose.
  * @returns The new function that is the compose of f and g.

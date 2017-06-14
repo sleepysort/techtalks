@@ -133,7 +133,7 @@ describe("Exercise 4: compose()", function () {
 
         var h = ex.compose(f, f);
 
-        chai.assert.deepEqual(h(3), 27);
+        chai.assert.deepEqual(h(3), 12);
     });
 
     it("returns correctly composed string functions", function () {
