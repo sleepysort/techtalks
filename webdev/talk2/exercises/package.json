@@ -4,13 +4,17 @@
   "description": "Building a chat client using socket.io",
   "main": "dist/chatclient.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc -p .",
+    "start": "nodejs dist/chat-client.js",
+    "start-server": "",
+    "start-tunnel": "lt --port 4000 --subdomain sleepysortchatdemo"
   },
   "author": "sleepysort",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^8.0.0",
     "@types/socket.io": "^1.4.29",
+    "localtunnel": "^1.8.3",
     "typescript": "^2.3.4"
   },
   "dependencies": {
