@@ -7,5 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "sleepysort",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^8.0.0",
+    "@types/socket.io": "^1.4.29",
+    "typescript": "^2.3.4"
+  },
+  "dependencies": {
+    "socket.io": "^2.0.3"
+  }
 }
