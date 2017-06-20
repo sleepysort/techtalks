@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NPM and TypeScript</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hakimel/reveal.js@3.5.0/css/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hakimel/reveal.js@3.5.0/css/theme/black.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/9.11.0/styles/atelier-cave-dark.min.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <section data-markdown>
+                    <textarea data-template>
+                        Web Dev Series
+                        ### NPM and TypeScript
+                        [@sleepysort](https://sleepysort.github.io/)
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        These slides are available online at:
+                        [https://sleepsort.github.io/techtalks/webdev/talk2](https://sleepsort.github.io/techtalks/webdev/talk2)
+                    </textarea>
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    <textarea data-template>
+                        # Using NPM
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ### Node Package Manager (NPM)
+                        ---
+                        * A package management tool
+                        * Platform for hosting and distributing JavaScript libraries
+                        * Comes installed with NodeJS
+                        * Go to [https://www.npmjs.org/](https://www.npmjs.org/) to browse packages
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ### Using NPM to install packages
+                        ---
+                        * Use `npm install PACKAGE_NAME` to install the package into the `node_modules` directory
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        Demo: Installing and using `immutable`
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ### `package.json`
+                        ---
+                        * The JavaScript equivalent of a project/manifest file
+                        * Any JavaScript project can be thought of as a package
+                        * Tracks the dependencies of the package
+                        * Running `npm install` will automatically look for a `package.json` in the directory
+                    </textarea>
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    <textarea data-template>
+                        # Introducing TypeScript
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        > JavaScript is a wonderful language that no one should ever use.
+                        >
+                        > -Shawn
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ### TypeScript
+                        ---
+                        * Developed and maintained by Microsoft
+                        * Superset of JavaScript
+                        * Transpiles to regular JavaScript (ES3, ES5, or ES6)
+                        * Adds static type checking capabilities to JS
+                        * Allows you to use future JS features
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ### Installing TypeScript
+                        ---
+                        Run `npm install -g typescript`
+                        > The `-g` flag installs the package globally, and 
+                        > allows you to use the package as a command-line tool.
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        Demo: TypeScript Hello World
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ### Some TypeScript features
+                        ---
+                        * Type annotations
+                        * `let` and `const`
+                        * Interfaces
+                        * ES6 class syntax
+                        * Arrow functions
+                        * Union/Intersection/Literal types
+                        * ES7 `async`/`await`
+                        * Mixin classes
+                        * Rest/Spread notation
+                        * Generics
+                        * Decorator functions
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ### `tsconfig.json`
+                        ---
+                        * Sets compiler options for the project:
+                        ```typescript
+                            {
+                                "compilerOptions": {
+                                    "module": "commonjs",
+                                    "rootDir": "./src",
+                                    "outDir": "./dist"
+                                    ...
+                                }
+                            }
+                        ```
+                    </textarea>
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    <textarea data-template>
+                        # `socket.io`
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        > Socket.IO enables real-time bidirectional event-based communication.
+                        >
+                        > - From the socket.io website
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ### About `socket.io`
+                        ---
+                        - Allows persistent connections with a server
+                        - Communicate via messages
+                        - Uses either Websockets (if supported) or polling
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ### Using `socket.io`
+                        ---
+                        ```typescript
+                        // Connect to the server
+                        const socket = io("http://my-server");
+
+                        // Attach listeners to message events
+                        socket.on("myMessageReceived", (data: any) => {
+                            console.log(data);
+
+                            const reply = { foo: "bar" };
+
+                            // Send messages to the server
+                            socket.emit("myMessageSend", reply);
+                        });
+                        ```
+                    </textarea>
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    <textarea data-template>
+                        # Exercise: Building a chat client
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ### Building a chat client with `socket.io`
+                        ---
+                        1. Clone/pull latest from the Git repo @ `https://github.com/sleepysort/techtalks.git`.
+                        2. Go to the `techtalks/webdev/talk2/exercises` directory.
+                        3. Run `npm install`.
+                        4. Edit the code in `chatclient.js`.
+                        5. Use `npm run build` to compile.
+                        6. Use `npm start -- SERVER_ADDRESS` to start your client.
+                    </textarea>
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    <textarea data-template>
+                        Thank you all for coming!
+                    </textarea>
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/highlight.js/9.11.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/highlight.js/9.11.0/languages/typescript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hakimel/reveal.js@3.5.0/lib/js/head.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hakimel/reveal.js@3.5.0/js/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hakimel/reveal.js@3.5.0/plugin/markdown/marked.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hakimel/reveal.js@3.5.0/plugin/markdown/markdown.js"></script>
+    <script>Reveal.initialize();</script>
+</body>
+</html>
