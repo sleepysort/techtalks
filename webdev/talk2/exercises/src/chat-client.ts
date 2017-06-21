@@ -52,6 +52,7 @@ const serverAddr = process.argv[2];
  *             - ChatEventType.UserJoined        When a new user joins the server.
  *             - ChatEventType.UserExited        When a user leaves the server.
  *             - ChatEventType.MessageReceived   When a new message is received.
+ *             - ChatEventType.Echo              What the server will reply with when you emit an 'Echo'.
  * 
  *     io.once(EVENT_TYPE, CALLBACK)
  *         Same as io.on(), but will only call the CALLBACK once, and detach from the event afterwards.
@@ -62,6 +63,7 @@ const serverAddr = process.argv[2];
  *         the EVENT_TYPEs you can send *to* the server are:
  *             - ChatEventType.JoinRequest       When you wish to join the server.
  *             - ChatEventType.MessageSent       When you want to send a chat message to the server.
+ *             - ChatEventType.Echo              When you want to test the connection; server will reply with an echo.
  * 
  * Go to https://socket.io/docs/client-api/ for more details.
  */
@@ -73,7 +75,7 @@ const io = socketio(serverAddr);
  * 
  *     rl.on(EVENT_TYPE, CALLBACK)
  *         This attaches a CALLBACK for the given EVENT_TYPE.
- *         The only event you should be concerned with for the exercise is 'line', which will be 
+ *         The only event you should be concerned with for the exercise is "line", which will be 
  *         when a line from stdin is entered. The CALLBACK will be called with the line string.
  * 
  *     rl.question(PROMPT, CALLBACK)
@@ -89,10 +91,10 @@ const rl = readline.createInterface(process.stdin);
  * Note: Send the JoinRequest to the server AFTER you set up all of your listeners.
  */
 
-// io.once(ChatEventType.JoinAccepted, () => {
-//     io.on(ChatEventType.UserJoined, (data: UserJoinedData) => {
-//         console.log(`${data.username} has joined the room!`);
-//     });
+// io.on(ChatEventType.Echo, (data: string) => {
+//     console.log(data);
 // });
 
-io.emit(ChatEventType.JoinRequest, { username: "anonymous" });
+// rl.on("line", (line: string) => {
+//     io.emit(ChatEventType.Echo, line);
+// });

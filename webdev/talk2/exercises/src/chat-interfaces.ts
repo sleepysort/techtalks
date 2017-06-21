@@ -2,23 +2,26 @@
  * Types of events supported by the chat client.
  */
 export const ChatEventType = {
+    /** Used by client and server to test the connection. */
+    Echo: "echo",
+
     /** Sent by the client to the server when attempting to join the chat. */
-    JoinRequest: "JoinRequest",
+    JoinRequest: "joinrequest",
 
     /** Sent by the server to the client when the server accepts the JoinRequest. */
-    JoinAccepted: "JoinAccepted",
+    JoinAccepted: "joinaccepted",
 
     /** Sent by the server to the client when a new user joins. */
-    UserJoined: "UserJoined",
+    UserJoined: "userjoined",
 
     /** Sent by the server to the client when a user disconnects. */
-    UserExited: "UserExited",
+    UserExited: "userexited",
 
     /** Sent by the client to the server when sending a message. */
-    MessageSent: "MessageSent",
+    MessageSent: "messagesent",
 
     /** Sent by the server to the client when a new message is received. */
-    MessageReceived: "MessageReceived"
+    MessageReceived: "messagereceived"
 }
 
 /**
