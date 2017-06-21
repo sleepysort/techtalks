@@ -5,8 +5,9 @@
   "main": "dist/chatclient.js",
   "scripts": {
     "build": "tsc -p .",
+    "watch": "tsc -w -p .",
     "start": "nodejs dist/chat-client.js",
-    "start-server": "",
+    "start-server": "nodejs dist/chat-server.js",
     "start-tunnel": "lt --port 4000 --subdomain sleepysortchatdemo"
   },
   "author": "sleepysort",
@@ -14,10 +15,12 @@
   "devDependencies": {
     "@types/node": "^8.0.0",
     "@types/socket.io": "^1.4.29",
+    "@types/socket.io-client": "^1.4.29",
     "localtunnel": "^1.8.3",
     "typescript": "^2.3.4"
   },
   "dependencies": {
-    "socket.io": "^2.0.3"
+    "socket.io": "^2.0.3",
+    "socket.io-client": "^2.0.3"
   }
 }
